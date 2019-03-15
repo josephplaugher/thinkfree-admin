@@ -1,0 +1,54 @@
+#sign-in{
+    margin: auto;
+    padding: 0;
+    width: 350px;
+    min-width: 350px;
+}
+
+#login-msg {
+    color: red;
+}
+
+#edit-pane {
+    padding: 10px;
+}
+
+#blog-list {
+    padding: 10px;
+}
+
+.blog-row {
+    background-color: #F5F5F5;
+    margin: 10px;
+    padding: 10px;
+}
+
+.title-row {
+    font-size: 12px;
+}
+
+.desc-row {
+    font-size: 12px;
+}
+
+.active {
+    display: inline;
+}
+
+#active-id,
+#active-published {
+    text-decoration: none;
+    border: none;
+    padding: 15px;
+    width: 30px;
+}
+
+#active-title,
+#active-desc {
+    background-color: #F5F5F5;
+    margin: 15px;
+    font-size: 12px;
+    width: 230px;
+}
+
+

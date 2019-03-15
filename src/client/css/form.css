@@ -1,0 +1,50 @@
+.formTitle {
+    color: #2665C4;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.textinput {
+    border-top: 0px;
+    border-right: 0px;
+    border-left: .5px solid #2665C4;
+    border-bottom: .5px solid #2665C4;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.input-container {
+    display: inline-block;
+    margin: 5px;
+}
+
+.label {
+    position: absolute;
+    margin-top: -9px;
+    margin-left: 10px;
+    font-size: 8px;
+}
+
+.input-error {
+    color: red;
+    font-size: 12px;
+    margin-left: 50px;
+    position: absolute;
+}
+
+.submit {
+    margin: 0px;
+    padding: 3px 18px 3px 18px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 5px;
+    border-color: #2665C4;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.buttondiv {
+    clear: both;
+    margin-left: 30px;
+}

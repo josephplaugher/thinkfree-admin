@@ -1,0 +1,14 @@
+#workingPane {
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    width: 75%;
+    z-index: 10;
+}
+
+#searchResultPane {
+    width: 100%;
+    height: 200px;
+    overflow: scroll;
+    resize: vertical
+}
