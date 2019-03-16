@@ -2,6 +2,7 @@ const dotenv = require("dotenv").config();
 const express = require("express");
 const SetUrl = require("./util/SetUrl");
 const Auth = require("./util/Auth");
+const KillCookie = require("./util/KillCookie");
 const bodyParser = require("body-parser");
 const app = express();
 const cookieParser = require("cookie-parser");
@@ -36,6 +37,7 @@ app.get("/checkLoginState", Auth, (req, res) => {
 });
 
 app.use("/", loginCont);
+app.use("/logout", KillCookie);
 //all the blog edit/creation routes require a valid cookie
 app.use("/", Auth, blogCont);
 //this route renders the UI. The UI will check for the cookie

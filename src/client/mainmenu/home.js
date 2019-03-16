@@ -172,7 +172,7 @@ class Home extends React.Component {
           ) : (
             <input type="button" value="Publish" onClick={this.publishPost} />
           )}
-          <input type="button" value="Sign Out" onClick={this.logout} />
+          <input type="button" value="Sign Out" onClick={this.props.logout} />
         </div>
         <div id="blog-list">{posts}</div>
       </div>

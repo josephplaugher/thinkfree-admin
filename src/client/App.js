@@ -2,6 +2,7 @@ import { FormClass, Input, Button } from "reactform-appco";
 import React from "react";
 import EB from "Util/EB";
 import checkLoginState from "Util/CheckLoginState";
+import Ajax from "Util/Ajax";
 import SetUrl from "Util/SetUrl";
 import ValRules from "Util/ValRules";
 import Home from "./mainmenu/home";
@@ -71,7 +72,9 @@ class App extends FormClass {
   };
 
   logout = () => {
-    this.setState({ isLoggedIn: false });
+    Ajax.get(SetUrl() + "/logout").then(resp => {
+      this.setState({ isLoggedIn: false });
+    });
   };
 
   render() {
