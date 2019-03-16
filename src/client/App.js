@@ -1,6 +1,7 @@
 import { FormClass, Input, Button } from "reactform-appco";
 import React from "react";
 import EB from "Util/EB";
+import checkLoginState from "Util/CheckLoginState";
 import SetUrl from "Util/SetUrl";
 import ValRules from "Util/ValRules";
 import Home from "./mainmenu/home";
@@ -30,9 +31,26 @@ class App extends FormClass {
         message: ""
       }
     };
+    this.setLoginState = this.setLoginState.bind(this);
     this.response = this.response.bind(this);
     this.logout = this.logout.bind(this);
+    this.setLoginState();
   }
+
+  setLoginState = () => {
+    let auth = checkLoginState();
+    auth.then(res => {
+      if (res.isLoggedIn === true) {
+        this.setState({
+          isLoggedIn: res.isLoggedIn
+        });
+      } else {
+        this.setState({
+          isLoggedIn: false
+        });
+      }
+    });
+  };
 
   response = res => {
     console.log("res: ", res);

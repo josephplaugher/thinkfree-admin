@@ -1,6 +1,0 @@
-{"level":"error","message":{"name":"error","length":105,"severity":"ERROR","code":"42703","position":"25","file":"parse_relation.c","line":"3294","routine":"errorMissingColumn"}}
-{"level":"error","message":{"name":"error","length":105,"severity":"ERROR","code":"42703","position":"25","file":"parse_relation.c","line":"3294","routine":"errorMissingColumn"}}
-{"level":"error","message":{"name":"error","length":158,"severity":"ERROR","code":"0A000","position":"37","file":"parse_expr.c","line":"1571","routine":"transformMultiAssignRef"}}
-{"level":"error","message":{"name":"error","length":105,"severity":"ERROR","code":"42703","position":"21","file":"parse_relation.c","line":"3294","routine":"errorMissingColumn"}}
-{"level":"error","message":{"code":"EENVELOPE","command":"API"}}
-{"level":"error","message":{"code":"EENVELOPE","command":"API"}}

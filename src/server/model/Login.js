@@ -1,10 +1,10 @@
 const bcrypt = require("bcryptjs");
 const db = require("../util/postgres");
-const log = require("../util/Logger");
 const Conn = db.Conn;
 
 function Login(req, res) {
   this.inputs = req.body;
+  this.req = req;
   this.res = res;
 }
 
@@ -16,7 +16,7 @@ Login.prototype.login = function() {
   };
   Conn.query(query)
     .catch(e => {
-      log(e, "Login.js");
+      console.log(e, "Login.js");
     })
     .then(data => {
       this.checkPassword(data);
@@ -36,7 +36,7 @@ Login.prototype.checkPassword = function(data) {
     //compaare the hashes
     bcrypt.compare(this.inputs.password, dbhash, (error, result) => {
       if (error) {
-        log(error, "Login.js");
+        console.log(error, "Login.js");
       } else if (result == false) {
         // this response occurs if the username was correct but password was incorrect
         this.res.status(200).json({
@@ -45,17 +45,22 @@ Login.prototype.checkPassword = function(data) {
         });
       } else if (result == true) {
         delete data.rows[0].password; //ensure the pw hash isn't sent along to the client
+        console.log("user data: ", data.rows[0]);
+        this.res.cookie(process.env.COOKIE_NAME, data.rows[0], {
+          expires: new Date(Date.now() + 60 * 60 * 1000), // expires in one hour
+          maxAge: 60 * 60 * 1000,
+          httpOnly: true,
+          secure: process.env.NODE_ENV === true
+        });
         this.res.status(200).json({ success: true, userNotify: {} });
       }
     });
   } else {
     // this response occurs if the user does not exist
-    this.res
-      .status(200)
-      .json({
-        userNotify: { message: "That email or password is invalid" },
-        userData: ""
-      });
+    this.res.status(200).json({
+      userNotify: { message: "That email or password is invalid" },
+      userData: ""
+    });
   }
 };
 
