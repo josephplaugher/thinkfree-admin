@@ -36,6 +36,7 @@ app.get("/checkLoginState", Auth, (req, res) => {
   res.status(200).json({ checkLoginState: "done" });
 });
 
+//login and logut routes
 app.use("/", loginCont);
 app.use("/logout", KillCookie);
 //all the blog edit/creation routes require a valid cookie
