@@ -2,7 +2,6 @@ import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import SetUrl from "Util/SetUrl";
 import Ajax from "Util/Ajax";
-
 import "css/main.css";
 import "css/form.css";
 
