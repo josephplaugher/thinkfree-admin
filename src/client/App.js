@@ -89,7 +89,6 @@ class App extends FormClass {
           </EB>
         ) : (
           <div id="sign-in">
-            {/* prettier-ignore*/}
             <p>Blog Admin Utility</p>
             <form onSubmit={this.rfa_onSubmit}>
               <Input
