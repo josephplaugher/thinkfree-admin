@@ -54,7 +54,6 @@ class App extends FormClass {
   };
 
   response = res => {
-    console.log("res: ", res);
     if (res.data.success === true) {
       this.setState({
         userNotify: res.data.userNotify,

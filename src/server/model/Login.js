@@ -45,7 +45,6 @@ Login.prototype.checkPassword = function(data) {
         });
       } else if (result == true) {
         delete data.rows[0].password; //ensure the pw hash isn't sent along to the client
-        console.log("user data: ", data.rows[0]);
         this.res.cookie(process.env.COOKIE_NAME, data.rows[0], {
           expires: new Date(Date.now() + 60 * 60 * 1000), // expires in one hour
           maxAge: 60 * 60 * 1000,

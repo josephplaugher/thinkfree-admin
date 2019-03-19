@@ -1,7 +1,6 @@
 const Auth = (req, res, next) => {
   const authorized = "authorized";
   const cookieName = process.env.COOKIE_NAME;
-  console.log("cookie", req.cookies[cookieName]);
   if (typeof req.cookies[cookieName] != "undefined") {
     //check if cookie exists
     //upon authentication, renew the cookie

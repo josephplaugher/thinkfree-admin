@@ -13,7 +13,6 @@ const checkLoginState = () => {
             isLoggedIn: true
           });
         } else {
-          console.log("not authorized");
           resolve({
             isLoggedIn: false
           });

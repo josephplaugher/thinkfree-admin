@@ -17,12 +17,7 @@ emailSubscribed.prototype.getList = function() {
         FROM users
         WHERE subscribe = 't'`
   )
-    .catch(
-      (
-        e //{
-      ) => console.log("error: ", e)
-      //log(e, 'EmailSubscribed.js')
-    )
+    .catch(e => console.log("error: ", e))
     .then(resp => {
       this.emailList = resp.rows;
       this.setContent();
