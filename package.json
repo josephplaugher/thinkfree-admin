@@ -14,7 +14,7 @@
   "dependencies": {
     "@sentry/node": "^4.4.2",
     "@tinymce/tinymce-react": "^2.4.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "concurrently": "^3.6.1",
