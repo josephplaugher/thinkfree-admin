@@ -38,7 +38,7 @@
     "react-table": "^6.8.5",
     "reactform-appco": "^1.0.5",
     "router-express": "^1.5.2",
-    "tinymce": "^4.8.5",
+    "tinymce": "^5.6.0",
     "uuid": "^3.3.2",
     "winston": "^3.1.0"
   },
